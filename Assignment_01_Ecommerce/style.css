@@ -1,0 +1,103 @@
+/* Reset default margins and prevent horizontal scroll */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100%;
+  background-color: #ffffff;
+}
+
+/* Create a flex container for full height layout */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* All visible content goes in main (optional if wrapping sections) */
+main {
+  flex: 1;
+}
+
+/* Hide all sections by default */
+.content-section {
+  display: none;
+}
+
+/* Show home-section initially */
+#home-section {
+  display: block;
+}
+
+/* Navbar Styling */
+.navbar-custom {
+  background: linear-gradient(to right, #000000, #434343);
+}
+.navbar-custom .nav-link,
+.navbar-custom .navbar-brand {
+  color: white;
+}
+.navbar-custom .nav-link:hover {
+  color: #f39c12;
+}
+
+/* Hero Section */
+.hero {
+  background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+  color: white;
+  padding: 120px 20px;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Car Image Styling */
+.car-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Testimonial Cards */
+.testimonial-box {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+  height: 100%;
+}
+
+/* Show password eye */
+.show-password {
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #007bff;
+}
+
+/* Login Container */
+.login-container {
+  max-width: 400px;
+  margin: 100px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Dashboard Section */
+.dashboard {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* Footer at the bottom */
+.footer {
+  background: #000000;
+  color: #ddd;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: auto;
+}

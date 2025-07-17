@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DriveX Motors</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#" onclick="showSection('home-section')">DriveX Motors</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon bg-light"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('home-section')">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('models-section')">Models</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('services-section')">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('testimonials-section')">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('contact-section')">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('login-section')">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home-section" class="content-section hero">
+  <div class="container">
+    <h1>Drive into the Future with DriveX</h1>
+    <p class="lead">Find your perfect car with comfort, style, and innovation</p>
+    <a href="#" class="btn btn-warning btn-lg" onclick="showSection('models-section')">Explore Cars</a>
+  </div>
+</section>
+
+<!-- Models Section -->
+<section id="models-section" class="content-section py-5">
+  <div class="container">
+    <h2 class="mb-4 text-center">Featured Car Models</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://tse1.mm.bing.net/th/id/OIP.nYGx1VSPxY0EHT-LDdpXVQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" class="car-img">
+          <div class="card-body">
+            <h5 class="card-title">Mercedes Benz</h5>
+            <p class="card-text">₹8.5 Lakhs - Sleek design, 25 km/l, automatic transmission</p>
+            <a href="#contact-section" onclick="showSection('contact-section')" class="btn btn-outline-primary mt-2">Book Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://tse3.mm.bing.net/th/id/OIP.d1lg9nQ_FCjSzcIsWy_VGwHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" class="car-img">
+          <div class="card-body">
+            <h5 class="card-title">Audi R8</h5>
+            <p class="card-text">₹12 Lakhs - Turbo engine, sunroof, advanced infotainment</p>
+            <a href="#contact-section" onclick="showSection('contact-section')" class="btn btn-outline-primary mt-2">Book Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.2ffEMDyn8ErXODrrNCamuQHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" class="car-img">
+          <div class="card-body">
+            <h5 class="card-title">DriveX Electric X</h5>
+            <p class="card-text">₹18 Lakhs - EV with 350km range, zero emissions</p>
+            <a href="#contact-section" onclick="showSection('contact-section')" class="btn btn-outline-primary mt-2">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services-section" class="content-section py-5 bg-light">
+  <div class="container">
+    <h2 class="mb-4 text-center">Our Services</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card p-3">
+          <img src="https://tse4.mm.bing.net/th/id/OIP.26AW45uWFBnJbHw7qpMX8AHaE7?r=0&w=1200&h=799&rs=1&pid=ImgDetMain&o=7&rm=3" class="car-img mb-3">
+          <h5>Test Drive at Home</h5>
+          <p>Book online and get the car delivered at your doorstep for a test drive.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3">
+          <img src="https://tse1.mm.bing.net/th/id/OIP.Gx_--agg6qjMmS23fJXs8AHaD3?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" class="car-img mb-3">
+          <h5>EMI & Loan Assistance</h5>
+          <p>Flexible financing and bank tie-ups to ease your buying journey.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3">
+          <img src="https://d2gg9evh47fn9z.cloudfront.net/1600px_COLOURBOX15540856.jpg" class="car-img mb-3">
+          <h5>Free Maintenance</h5>
+          <p>Complimentary servicing for the first 12 months on every purchase.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials-section" class="content-section py-5">
+  <div class="container">
+    <h2 class="mb-4 text-center">What Our Customers Say</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="testimonial-box">
+          <p>“Amazing service and premium car options. I got my dream EV within 2 days!”</p>
+          <strong>- Rahul P.</strong>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="testimonial-box">
+          <p>“The home test drive was so convenient. DriveX team is truly customer-first!”</p>
+          <strong>- Anjali M.</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact-section" class="content-section py-5 bg-light">
+  <div class="container">
+    <h2 class="mb-4 text-center">Contact Us</h2>
+    <form>
+      <div class="mb-3"><input type="text" class="form-control" placeholder="Your Name"></div>
+      <div class="mb-3"><input type="email" class="form-control" placeholder="Your Email"></div>
+      <div class="mb-3"><textarea class="form-control" rows="4" placeholder="Message"></textarea></div>
+      <div class="text-center"><button type="submit" class="btn btn-dark">Send Message</button></div>
+    </form>
+  </div>
+</section>
+
+<!-- Login Section -->
+<section id="login-section" class="content-section">
+  <div class="login-container">
+    <h2 class="text-center mb-4">Admin Login</h2>
+    <form onsubmit="return loginUser()">
+      <div class="mb-3"><input type="text" class="form-control" id="username" placeholder="Username" required></div>
+      <div class="mb-3">
+        <div class="input-group">
+          <input type="password" class="form-control" id="password" placeholder="Password" required>
+          <span class="input-group-text show-password" onclick="togglePassword()">👁️</span>
+        </div>
+      </div>
+      <div class="d-grid"><button type="submit" class="btn btn-dark">Login</button></div>
+    </form>
+  </div>
+</section>
+
+<!-- Dashboard -->
+<section id="dashboard-section" class="content-section">
+  <div class="dashboard">
+    <h2>Welcome Admin!</h2>
+    <p>This is your dashboard. You can manage car listings, users, and track orders here.</p>
+    <button class="btn btn-outline-danger" onclick="logout()">Logout</button>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>© 2025 DriveX Motors. All rights reserved.</p>
+</footer>
+
+<!-- JS -->
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
