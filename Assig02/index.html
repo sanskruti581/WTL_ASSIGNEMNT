@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modern To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>📝 To-Do Manager</header>
+
+  <nav>
+    <div class="active" onclick="filterTasks('all', this)">📋 All</div>
+    <div onclick="filterTasks('completed', this)">✅ Completed</div>
+    <div onclick="filterTasks('pending', this)">⏳ Pending</div>
+  </nav>
+
+  <h2>Add a New Task</h2>
+  <input type="text" id="taskInput" placeholder="Enter your task" />
+  <button onclick="addTask()">Add Task</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Task</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody class="taskBody"></tbody>
+  </table>
+
+  <footer>🚀 Made by Sanskruti | © 2025</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
