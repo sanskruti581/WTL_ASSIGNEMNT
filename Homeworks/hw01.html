@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comprehensive CSS Practical Tasks</title>
+<style>
+  /* --- General Page Styles --- */
+
+  /* Task: Use local "img" file as background & Adjust colors for light image */
+  body {
+    background-image: url('img'); /* Uses local file from the same directory */
+    background-color: #f0f0f0; /* Fallback for if image fails to load */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    color: #444; /* Darker text for readability on a light background */
+  }
+
+  /* --- Headings and Text --- */
+
+  h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+    text-align: center;
+    color: #333; /* Dark gray for headings */
+    text-shadow: none; /* Remove shadow for better contrast */
+  }
+  
+  /* Task: Add letter spacing to a heading */
+  .spacing-heading {
+    letter-spacing: 5px;
+  }
+
+  /* Task: Use text-shadow to give heading a shadow */
+  .shadow-heading {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  }
+
+  /* Task: Justify text in paragraphs & Change font size of paragraphs to 18px & Add line height to paragraphs */
+  p {
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555; /* A soft dark gray for paragraphs */
+  }
+  
+  /* Task: Italicize a quote inside <blockquote> */
+  blockquote {
+    font-style: italic;
+    border-left: 5px solid #007bff;
+    padding-left: 10px;
+    background-color: #f8f9fa; /* A subtle background for quotes */
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+
+  /* Task: Make certain text bold using a class */
+  .bold-text {
+    font-weight: bold;
+  }
+  
+  /* Task: Use text-transform to capitalize first letter of each word */
+  .capitalize-text {
+    text-transform: capitalize;
+  }
+
+  /* --- Links and Navigation --- */
+
+  /* Task: Set the color of all links to blue & Remove underline from all links */
+  a {
+    color: #0056b3; /* A darker blue for better visibility */
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  /* Task: Add underline only on hover to links */
+  a:hover {
+    text-decoration: underline;
+    color: #003e80;
+  }
+
+  /* Task: Remove bullets from unordered list & Style list items to display inline horizontally */
+  .horizontal-list ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  .horizontal-list li {
+    padding: 0;
+  }
+  
+  /* Task: Create a horizontal navbar using list items */
+  .navbar {
+    background-color: #333;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .navbar li a {
+    color: white; /* Keep text white for contrast on dark navbar */
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+  }
+  /* Task: Change color of nav links on hover */
+  .navbar li a:hover {
+    background-color: #575757;
+  }
+  /* Task: Highlight current active nav link */
+  .navbar .active-link {
+    background-color: #007bff;
+  }
+  /* Task: Make a sticky header that stays at the top on scroll */
+  .sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  /* --- Boxes and Layout --- */
+  
+  /* Shared box styling */
+  .box {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+  }
+
+  /* Task: Give a specific <div> a background color using its id */
+  #specific-div {
+    background-color: #e0f7fa;
+  }
+
+  /* Task: Style multiple elements with same class to have padding and border */
+  .class-box {
+    padding: 15px;
+    border: 2px solid #333;
+  }
+
+  /* Task: Add padding inside a box & Add margin around a box */
+  .spacing-box {
+    margin: 20px;
+    padding: 30px;
+  }
+  
+  /* Task: Use different margin on top/bottom vs left/right */
+  .custom-margin-box {
+    margin: 20px 50px; /* Top/bottom 20px, left/right 50px */
+  }
+
+  /* Task: Give a box a solid border */
+  .solid-border {
+    border: 3px solid #ff5722;
+  }
+  
+  /* Task: Make a box with dashed or dotted border */
+  .dashed-border {
+    border: 3px dashed #8bc34a;
+  }
+
+  /* Task: Add border-radius to round the corners */
+  .rounded-corners {
+    border-radius: 15px;
+  }
+  
+  /* Task: Create a card style box with padding, border and shadow */
+  .card {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  /* Task: Position a badge inside a box using position: absolute */
+  .relative-container {
+    position: relative;
+    border: 2px dashed #007bff;
+    padding: 20px;
+    height: 150px;
+  }
+  .badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+  }
+
+  /* Task: Use position: relative to offset a div from top */
+  .relative-offset {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    background-color: #ffeb3b;
+    padding: 10px;
+    width: 200px;
+  }
+  
+  /* Task: Use z-index to overlay one box over another */
+  .overlay-box {
+    position: relative;
+    height: 100px;
+    width: 200px;
+  }
+  .box-1 {
+    background-color: #4CAF50;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* This box will be on top */
+  }
+  .box-2 {
+    background-color: #FFC107;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 0;
+  }
+
+  /* Task: Make a footer stick to bottom using position: fixed */
+  .fixed-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  /* --- Images --- */
+
+  /* Task: Make an image responsive using max-width: 100% */
+  .responsive-img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Task: Add border-radius to an image to make it circular */
+  .circular-img {
+    border-radius: 50%;
+  }
+  
+  /* Task: Add a box shadow to an image */
+  .shadow-img {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  /* --- Buttons and Forms --- */
+
+  button {
+    padding: 10px 20px;
+    border: 2px solid #007bff;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  /* Task: Change button background on hover */
+  button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  /* Task: Change button border on focus */
+  button:focus {
+    outline: none;
+    border-color: #ffc107;
+  }
+
+  /* Task: Style input fields with padding and border-radius */
+  .form-group input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  /* Task: Change input border on focus */
+  .form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Task: Style submit button with hover and active effects */
+  .submit-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .submit-btn:hover {
+    background-color: #218838;
+  }
+  .submit-btn:active {
+    background-color: #1e7e34;
+  }
+
+  /* --- Flexbox and Grid --- */
+
+  /* Task: Create a row of three equal-width boxes using Flexbox */
+  .flex-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .flex-row .flex-item {
+    flex: 1;
+    text-align: center;
+  }
+
+  /* Task: Create a column of boxes using Flexbox */
+  .flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Task: Center a box vertically and horizontally with Flexbox & Use Flexbox with fixed height */
+  .flex-center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border: 2px dashed #ff5722;
+  }
+
+  /* Task: Use space-between to evenly space navbar links */
+  .flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+  }
+
+  /* Task: Align a button to the end of container using Flexbox */
+  .flex-end-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  /* Task: Use Flex grow to make items fill available space */
+  .flex-grow-container {
+    display: flex;
+    gap: 10px;
+  }
+  .flex-grow-item {
+    padding: 15px;
+    border: 1px solid #ddd;
+  }
+  .flex-grow-item:nth-child(1) { flex-grow: 1; }
+  .flex-grow-item:nth-child(2) { flex-grow: 2; }
+  .flex-grow-item:nth-child(3) { flex-grow: 1; }
+
+  /* Task: Wrap Flex items onto multiple lines */
+  .flex-wrap-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 400px; /* Constrain width to force wrapping */
+    border: 2px dashed #4CAF50;
+  }
+  .flex-wrap-item {
+    width: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+
+  /* Task: Create a 2-column grid layout with CSS Grid & Build a 3x3 grid of boxes with gap */
+  .grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .grid-3x3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .grid-item {
+    padding: 20px;
+    background-color: #f0f0f0;
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  /* Task: Span an item across two columns in Grid */
+  .grid-span-col {
+    grid-column: span 2;
+    background-color: #FFC107;
+  }
+
+  /* Task: Make a grid item span two rows */
+  .grid-span-row {
+    grid-row: span 2;
+    background-color: #8bc34a;
+  }
+
+  /* --- Advanced CSS --- */
+  
+  /* Task: Use background-repeat to tile an image */
+  .tiled-bg {
+    height: 150px;
+    background-image: url('https://via.placeholder.com/50');
+    background-repeat: repeat;
+  }
+  
+  /* Task: Add smooth transition to button hover */
+  .transition-btn {
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  /* Task: Animate a box moving left to right with keyframes */
+  @keyframes move {
+    from { left: 0; }
+    to { left: 200px; }
+  }
+  .animated-box {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    animation: move 2s infinite alternate;
+  }
+  
+  /* Task: Make text fade in using animation */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .fade-in-text {
+    animation: fadeIn 3s forwards;
+  }
+  
+  /* Task: Create a bounce animation on hover */
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+  }
+  .bounce-on-hover:hover {
+    animation: bounce 1s;
+  }
+  
+  /* Task: Rotate an icon continuously using animation */
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .rotate-icon {
+    display: inline-block;
+    animation: rotate 2s linear infinite;
+  }
+
+  /* --- Components --- */
+  
+  /* Task: Build a card component with image, title and text */
+  .product-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 300px;
+    overflow: hidden;
+  }
+  .product-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0; /* Override previous image styling */
+    box-shadow: none;
+  }
+  .product-card-content {
+    padding: 15px;
+  }
+  .product-card h3 {
+    margin-top: 0;
+  }
+  
+  /* Task: Create a hero section with background image and centered text */
+  .hero-section {
+    background: url('https://images.unsplash.com/photo-1517457210714-d17e79c5c2a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzODczNjl8MHwxfHNlYXJjaHwzfHxlY3N0YXN5JTIwbmF0dXJlJTIwYmFja2dyb3VuZHxlbnwwfHx8fDE3MjQwNjY5MTl8MA&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    flex-direction: column;
+  }
+  
+  /* Task: Style a testimonial box with quote icon */
+  .testimonial-box {
+    border-left: 5px solid #007bff;
+    padding: 20px;
+    background-color: #f0f8ff;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .testimonial-box::before {
+    content: '“';
+    font-size: 60px;
+    color: #ccc;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+  }
+  .testimonial-box p {
+    font-style: italic;
+    margin-top: 0;
+  }
+
+  /* Task: Create a responsive footer with multiple columns */
+  .footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .footer-col {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+  }
+  .footer a {
+    color: white;
+    display: block;
+    margin: 5px 0;
+  }
+
+  /* Task: Create a pricing table with three columns that stacks on mobile */
+  .pricing-table {
+    display: flex;
+    gap: 20px;
+  }
+  .pricing-plan {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .pricing-plan h3 {
+    color: #007bff;
+  }
+
+  /* --- Responsive Design --- */
+
+  /* Task: Use media query to change font size on small screens & Hide sidebar on screens under 600px & Stack columns vertically on small screens */
+  @media (max-width: 600px) {
+    /* Task: Change font size on small screens */
+    p {
+      font-size: 16px;
+    }
+    .main-container {
+      flex-direction: column;
+    }
+    /* Task: Hide sidebar on screens under 600px */
+    .sidebar {
+      display: none;
+    }
+    /* Task: Stack columns vertically on small screens */
+    .flex-row, .grid-2-col, .pricing-table {
+      flex-direction: column;
+      display: flex; /* Ensure it remains flex on smaller screens */
+    }
+    /* Task: Change grid layout to single column on mobile */
+    .grid-3x3 {
+      grid-template-columns: 1fr;
+    }
+    /* Task: Reverse order of Flexbox items on mobile */
+    .flex-reverse-on-mobile {
+      flex-direction: column-reverse;
+    }
+    /* Task: Change navbar layout to hamburger on mobile (style only) */
+    .navbar ul {
+      flex-direction: column;
+    }
+    .navbar li {
+      text-align: center;
+    }
+    .navbar li a {
+      border-bottom: 1px solid #444;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<header class="sticky-header">
+  <nav class="navbar">
+    <ul class="flex-space-between">
+      <li><a href="#" class="active-link">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<h1>My Comprehensive CSS Page</h1>
+<h2 class="shadow-heading spacing-heading">CSS is Fun!</h2>
+
+<p>
+  This is a regular paragraph with justified text. The font size is <span class="bold-text">18px</span> and the line height is increased for better readability.
+  <span class="capitalize-text">here is some capitalized text.</span>.
+</p>
+
+<blockquote>
+  "This quote is styled with italic text, as requested."
+</blockquote>
+
+<hr>
+
+<h2>Layout and Boxes</h2>
+<div id="specific-div" class="box">
+  This div has a specific background color and basic box styling.
+</div>
+
+<div class="class-box">This element has a class for padding and border.</div>
+<div class="class-box">So does this one.</div>
+
+<div class="spacing-box">
+  This box has a custom margin around it and padding inside.
+</div>
+
+<div class="custom-margin-box box">
+  This box uses different margins for top/bottom and left/right.
+</div>
+
+<div class="solid-border box">This box has a solid border.</div>
+<div class="dashed-border box">This box has a dashed border.</div>
+<div class="rounded-corners box">This box has rounded corners.</div>
+
+<div class="card">
+  <h3>Card Style Box</h3>
+  <p>This is an example of a simple card component with padding, a border, and a shadow.</p>
+</div>
+
+<h3>Positioning Examples</h3>
+<div class="relative-container">
+  This is a container with position: relative.
+  <span class="badge">New!</span>
+</div>
+
+<div class="relative-offset box">
+  This div is offset from the top using position: relative.
+</div>
+
+<div class="overlay-box">
+  <div class="box box-1">Box 1 (z-index: 1)</div>
+  <div class="box box-2">Box 2 (z-index: 0)</div>
+</div>
+
+<hr>
+
+<h2>Images</h2>
+<img src="https://via.placeholder.com/300" alt="Responsive image" class="responsive-img shadow-img">
+<img src="https://via.placeholder.com/300" alt="Circular image" class="responsive-img circular-img shadow-img">
+
+<hr>
+
+<h2>Flexbox and Grid</h2>
+
+<h3>Flexbox Examples</h3>
+<h4>Equal Width Row</h4>
+<div class="flex-row">
+  <div class="flex-item box">Item 1</div>
+  <div class="flex-item box">Item 2</div>
+  <div class="flex-item box">Item 3</div>
+</div>
+
+<h4>Vertical Column</h4>
+<div class="flex-col" style="height: 200px;">
+  <div class="box">Item A</div>
+  <div class="box">Item B</div>
+  <div class="box">Item C</div>
+</div>
+
+<h4>Center a Box</h4>
+<div class="flex-center-container">
+  <div class="box">I am centered!</div>
+</div>
+
+<h4>Align a Button to the End</h4>
+<div class="flex-end-container box">
+  <span>Some text</span>
+  <button>Go to end</button>
+</div>
+
+<h4>Flex Grow</h4>
+<div class="flex-grow-container">
+  <div class="flex-grow-item">Grows 1</div>
+  <div class="flex-grow-item">Grows 2</div>
+  <div class="flex-grow-item">Grows 1</div>
+</div>
+
+<h4>Flex Wrap</h4>
+<div class="flex-wrap-container">
+  <div class="flex-wrap-item">Item 1</div>
+  <div class="flex-wrap-item">Item 2</div>
+  <div class="flex-wrap-item">Item 3</div>
+  <div class="flex-wrap-item">Item 4</div>
+  <div class="flex-wrap-item">Item 5</div>
+</div>
+
+<h3>Grid Examples</h3>
+<h4>2-Column Grid</h4>
+<div class="grid-2-col">
+  <div class="box">Item 1</div>
+  <div class="box">Item 2</div>
+</div>
+
+<h4>3x3 Grid</h4>
+<div class="grid-3x3">
+  <div class="grid-item">1</div>
+  <div class="grid-item">2</div>
+  <div class="grid-item grid-span-col">Spans 2 columns</div>
+  <div class="grid-item">4</div>
+  <div class="grid-item grid-span-row">Spans 2 rows</div>
+  <div class="grid-item">6</div>
+  <div class="grid-item">7</div>
+  <div class="grid-item">8</div>
+</div>
+
+<hr>
+
+<h2>Components and Advanced CSS</h2>
+
+<h3>Hero Section</h3>
+<div class="hero-section">
+  <h1>Welcome to Our Site</h1>
+  <p>A place where creativity meets design.</p>
+</div>
+
+<h3>Product Card</h3>
+<div class="product-card">
+  <img src="https://via.placeholder.com/400x200" alt="Product Image">
+  <div class="product-card-content">
+    <h3>Product Title</h3>
+    <p>A brief description of the product goes here. This card is a component.</p>
+  </div>
+</div>
+
+<h3>Pricing Table</h3>
+<div class="pricing-table">
+  <div class="pricing-plan">
+    <h3>Basic</h3>
+    <p>$10/month</p>
+    <ul>
+      <li>Feature A</li>
+      <li>Feature B</li>
+      <li>Feature C</li>
+    </ul>
+    <button>Sign Up</button>
+  </div>
+  <div class="pricing-plan">
+    <h3>Pro</h3>
+    <p>$25/month</p>
+    <ul>
+      <li>All basic features</li>
+      <li>Feature D</li>
+      <li>Feature E</li>
+    </ul>
+    <button>Sign Up</button>
+  </div>
+  <div class="pricing-plan">
+    <h3>Premium</h3>
+    <p>$50/month</p>
+    <ul>
+      <li>All pro features</li>
+      <li>Feature F</li>
+      <li>Feature G</li>
+    </ul>
+    <button>Sign Up</button>
+  </div>
+</div>
+
+<h3>Other Examples</h3>
+<div class="gradient-box"></div>
+<div class="tiled-bg"></div>
+<div class="animated-box"></div>
+<p class="fade-in-text">This text fades in on page load.</p>
+<button class="bounce-on-hover">Bounce Me!</button>
+<p>
+  A rotating icon: <span class="rotate-icon">⚙️</span>
+</p>
+<div class="testimonial-box">
+  <p>This is a testimonial from a satisfied customer. The quote icon is added with a pseudo-element.</p>
+</div>
+
+<div class="main-container" style="display: flex; gap: 20px;">
+  <div class="content box" style="flex: 3;">
+    <p>This is the main content area.</p>
+  </div>
+  <div class="sidebar box" style="flex: 1;">
+    <p>This is the sidebar, which will disappear on small screens.</p>
+  </div>
+</div>
+
+<hr>
+
+<h2>Forms</h2>
+<form>
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name">
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email">
+  </div>
+  <button type="submit" class="submit-btn">Submit</button>
+</form>
+
+<footer class="footer">
+  <div class="footer-col">
+    <h4>About Us</h4>
+    <p>We are a company that does things.</p>
+  </div>
+  <div class="footer-col">
+    <h4>Links</h4>
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </div>
+  <div class="footer-col">
+    <h4>Contact</h4>
+    <p>123 Fake Street</p>
+    <p>City, State</p>
+  </div>
+</footer>
+<div style="height: 100px;"></div> <div class="fixed-footer">
+  &copy; 2024 All Rights Reserved.
+</div>
+
+</body>
+</html>
