@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Dictionary App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-brand">📖 Dictionary App</h1>
+        </div>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Find Your Words</h1>
+            <p>Type any word to get its definition, part of speech, and example usage.</p>
+        </header>
+
+        <div class="search-box">
+            <input type="text" id="wordInput" placeholder="Enter a word to search...">
+            <button id="searchBtn">
+                <span class="icon-search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </span>
+                <span class="spinner hidden"></span>
+            </button>
+        </div>
+
+        <div id="result" class="result-box">
+            <p class="placeholder-text">Search for a word to see its definition, part of speech, and example usage.</p>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Dictionary App. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
