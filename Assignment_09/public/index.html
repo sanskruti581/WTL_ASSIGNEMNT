@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student API Test</title>
+  </head>
+  <body>
+    <h1>Student List</h1>
+    <button onclick="getStudents()">Load Students</button>
+    <pre id="output"></pre>
+
+    <script>
+      function getStudents() {
+        fetch("/students")
+          .then((res) => res.json())
+          .then((data) => {
+            document.getElementById("output").innerText = JSON.stringify(
+              data,
+              null,
+              2
+            );
+          });
+      }
+
+      // Example POST request (to test, open devtools console & call: addStudent())
+      function addStudent() {
+        fetch("/students", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id: 3, name: "Aman", marks: 76 }),
+        })
+          .then((r) => r.json())
+          .then(console.log);
+      }
+    </script>
+  </body>
+</html>
