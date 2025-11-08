@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Student CRUD</title>
+  <style>
+  
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f4f7fa;
+      color: #333;
+    }
+
+   
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+
+    button {
+      margin: 5px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      background: #3498db;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #2980b9;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 70%;
+      margin: 20px auto;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background: #3498db;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+
+    tr:hover {
+      background: #f1f1f1;
+    }
+
+    form {
+      margin: 20px auto;
+      width: 300px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    form label {
+      display: inline-block;
+      width: 70px;
+      font-weight: bold;
+    }
+
+    form input {
+      padding: 8px;
+      margin: 5px 0;
+      width: 180px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      width: 100%;
+      margin-top: 10px;
+      background: #2ecc71;
+    }
+
+    form button:hover {
+      background: #27ae60;
+    }
+
+    /* Centered Buttons Section */
+    #buttonSection {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Student Records</h2>
+
+  <!-- Buttons -->
+  <div id="buttonSection">
+    <button onclick="showForm('create')">Add Student</button>
+    <button onclick="showForm('update')">Update Student</button>
+    <button onclick="showForm('delete')">Delete Student</button>
+  </div>
+
+  <!-- Table -->
+  <div id="output"></div>
+
+  <!-- Forms -->
+  <form id="studentForm" style="display:none;">
+    <input type="hidden" id="action" name="action">
+
+    <div id="idField">
+      <label>ID:</label>
+      <input type="text" id="id" name="id">
+    </div>
+
+    <div id="nameField">
+      <label>Name:</label>
+      <input type="text" id="name" name="name">
+    </div>
+
+    <div id="marksField">
+      <label>Marks:</label>
+      <input type="text" id="marks" name="marks">
+    </div>
+
+    <button type="button" onclick="submitForm()">Submit</button>
+  </form>
+
+  <script>
+    function loadData() {
+      fetch("crud.php?action=read")
+        .then(res => res.json())
+        .then(data => {
+          let html = "<table><tr><th>ID</th><th>Name</th><th>Marks</th></tr>";
+          data.forEach(stu => {
+            html += `<tr><td>${stu.id}</td><td>${stu.name}</td><td>${stu.marks}</td></tr>`;
+          });
+          html += "</table>";
+          document.getElementById("output").innerHTML = html;
+        });
+    }
+
+    // Show form based on action
+    function showForm(act) {
+      document.getElementById("studentForm").style.display = "block";
+      document.getElementById("action").value = act;
+
+      if (act === "create") {
+        document.getElementById("idField").style.display = "none";
+        document.getElementById("nameField").style.display = "block";
+        document.getElementById("marksField").style.display = "block";
+      }
+      if (act === "update") {
+        document.getElementById("idField").style.display = "block";
+        document.getElementById("nameField").style.display = "block";
+        document.getElementById("marksField").style.display = "block";
+      }
+      if (act === "delete") {
+        document.getElementById("idField").style.display = "block";
+        document.getElementById("nameField").style.display = "none";
+        document.getElementById("marksField").style.display = "none";
+      }
+    }
+
+    // Submit form
+    function submitForm() {
+      let formData = new FormData();
+      let action = document.getElementById("action").value;
+
+      formData.append("id", document.getElementById("id").value);
+      formData.append("name", document.getElementById("name").value);
+      formData.append("marks", document.getElementById("marks").value);
+
+      fetch("crud.php?action=" + action, { method: "POST", body: formData })
+        .then(res => res.text())
+        .then(msg => {
+          alert(msg);
+          document.getElementById("studentForm").reset();
+          document.getElementById("studentForm").style.display = "none";
+          loadData();
+        });
+    }
+
+    loadData();
+  </script>
+</body>
+
+</html>
